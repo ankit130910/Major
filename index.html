@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Game Page</title>
+    <link rel="stylesheet" href="style.css">   
+</head>
+<body>
+
+<header>
+    <h1>Play Craft Engine</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#games">Games</a>
+        <a href="#users">Users</a>
+    </nav>
+</header>
+
+<section class="tagline-carousel">
+    <div class="tagline-container">
+        <div class="tagline active">"Craft Your Adventure."</div>
+        <div class="tagline">"Where Imagination Meets Play."</div>
+        <div class="tagline">"Build, Play, Create."</div>
+        <div class="tagline">"Your Playground Awaits."</div>
+        <div class="tagline">"Empower Your Gaming Experience."</div>
+        <div class="tagline">"Unleash Your Creativity."</div>
+    </div>
+</section>
+
+<div class="dots">
+    <div class="dot active-dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<section class="game-posters" id="games">
+    <div class="poster">
+        <img src="https://play-lh.googleusercontent.com/uMCSwJnIKCemiAIc7xNTGBkOxlSu_e6xzZb29cqqV6bKU8Qz0m4ZQ5pmGhBNxE-vBrA" alt="Game Title 1 - Description of Game 1">
+        <h3>Ludo</h3>
+        <p>game for two to four players, in which the players race their four tokens from start to finish according to the rolls of a single die.</p>
+    </div>
+    <div class="poster">
+        <img src="https://media.istockphoto.com/id/531466314/vector/snakes-and-ladders.jpg?s=612x612&w=0&k=20&c=YYRwkxtVxAXrYV7kFCHKW4h0SHFS4sSSoaj-s9OeHF4=" alt="Game Title 2 - Description of Game 2">
+        <h3>Snack and Ladder</h3>
+        <p>The game play is simple, the player rolls a dice, and moves the number of spaces that's equal to the number he rolled. If he lands on a ladder, then he climbs it to the top. However, if he lands on a snake, then he rides it to the bottom. The first player to reach 100, wins.</p>
+    </div>
+    <div class="poster">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWc7EkRfpFgEBZfsx3Z_te1y7bt-puLpGqQg&s" alt="Game Title 3 - Description of Game 3">
+        <h3>Stone paper Scissor</h3>
+        <p>at the same time, two players display one of three symbols: a rock, paper, or scissors. A rock beats scissors, scissors beat paper by cutting it, and paper beats rock by covering it.</p>
+    </div>
+    <div class="poster">
+        <img src="https://store-images.microsoft.com/image/apps.18483.9007199266379485.0000ad5a-1400-4539-b79a-62b2b9248545.0ac4e475-8d4b-42bb-8723-14576cb8e50a?h=1280" alt="Game Title 4 - Description of Game 4">
+        <h3>Hill Climb Racing</h3>
+        <p>The objective of Hill Climb Racing is to drive as far through progressively difficult racing stages as possible while collecting coins, taking advantage of the non-realistic physics and using only two simple controls: the Gas and Brake pedals.</p>
+    </div>
+    <div class="poster">
+        <img src="https://play-lh.googleusercontent.com/u3frcutB3NcfoTyrVg_pGcJmrw4YX_QW4plJ6Uu3u-RnAKc-HbTluLKh6rQve2bT3Uk=w240-h480-rw" alt="Game Title 5 - Description of Game 5">
+        <h3>Puzzle</h3>
+        <p>Puzzle games focus on completion, which requires players to solve a logic puzzle or navigate a challenge to progress to the next, more difficult challenge. Depending on the puzzle game type, it may involve playing with multiple players, but typically, puzzle games are played solo.
+        </p>
+    </div>
+    <div class="poster">
+        <img src="https://www.emergetools.com/images/deepDives/candy-crush-saga/candy-crush-saga-gameplay.webp">
+        <h3>Candy Crush</h3>
+        <p>The aim of the game is to make matches of three or more candies vertically or horizontally. Depending on the type of level, the player must earn as much points as they can, or they must clear all the jelly, or they must allow ingredients to come to the bottom of the screen.</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Play Craft Engine. All Rights Reserved.</p>
+</footer>
+
+<script>
+    let taglineIndex = 0;
+    const taglines = document.querySelectorAll('.tagline');
+    const dots = document.querySelectorAll('.dot');
+    const taglineContainer = document.querySelector('.tagline-container');
+
+    function showTagline() {
+        taglineIndex = (taglineIndex + 1) % taglines.length; // Update index for the next tagline
+        const offset = taglineIndex * -100; // Calculate offset for sliding
+        taglineContainer.style.transform = `translateX(${offset}%)`; // Apply transformation
+        
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active-dot', i === taglineIndex); // Toggle active dot
+        });
+    }
+
+    setInterval(showTagline, 5000); // Change every 5 seconds
+    showTagline(); // Initial call
+</script>
+
+</body>
+</html>
